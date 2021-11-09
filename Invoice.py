@@ -23,14 +23,15 @@ class Invoice:
         total_pure_price = round(total_pure_price, 2)
         return total_pure_price
 
-    def totalTaxDue(self, products):
+    def totalWithTaxPrice(self, products):
         total_tax = 0
         for k, v in products.items():
             raw_price = v['qnt'] * v['unit_price']
             discount_price = raw_price - ((v['discount']/100) * raw_price)
             total_tax += discount_price * (v['tax']/100)
-        total_tax = round(total_tax, 2)
-        return total_tax
+        total_with_tax = self.totalPurePrice(products) + total_tax
+        total_with_tax = round(total_with_tax, 2)
+        return total_with_tax
 
     def inputAnswer(self, input_value):
         while True:

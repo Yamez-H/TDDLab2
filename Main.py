@@ -15,6 +15,7 @@ while True:
     if repeat == "n":
         break
 
-total_amount = Invoice().totalPurePrice(products) + Invoice().totalTaxDue(products)
-
-print("Your total price after tax is: ", total_amount)
+pre_tax_total_amount = Invoice().totalPurePrice(products)
+post_tax_total_amount = Invoice().totalWithTaxPrice(products)
+print("Your total price before tax is: ", pre_tax_total_amount)
+print("Your total price after tax is: ", post_tax_total_amount)

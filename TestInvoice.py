@@ -29,7 +29,7 @@ def test_CanCalucateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
 
-def test_CanCalucateTotalTaxDue(invoice, products):
-    invoice.totalTaxDue(products)
-    assert invoice.totalTaxDue(products) == 5.2
+def test_CanCalucateTotalWithTax(invoice, products):
+    invoice.totalWithTaxPrice(products)
+    assert invoice.totalWithTaxPrice(products) == 69.38 + 5.2
 
